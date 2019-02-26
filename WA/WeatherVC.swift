@@ -85,8 +85,10 @@ class WeatherVC: UIViewController {
             self.getCurrentWeatherForCity()
         }else{
             if lat == 0 && lon == 0{
-              self.getLocation()
+                // Update location
+                self.getLocation()
             }else{
+                // Use store location
                self.getWeatherByCoord(lat: self.lat, long: self.lon)
             }
         }
@@ -388,13 +390,17 @@ extension WeatherVC : UITableViewDataSource, UITableViewDelegate{
 // MARK: - CLLocationManagerDelegate
 extension WeatherVC : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // We dont need to show the alert anymore
         self.showAlert = false
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         //if self.cityName == "currentLocation"{
+        // Get weather conditions
         self.getWeatherByCoord(lat: locValue.latitude, long: locValue.longitude)
+        // Save coords. WA for not managings gps policy changes
         self.lat = locValue.latitude
         self.lon = locValue.longitude
         //}
+        // Dont need to update location anymore
         self.locationManager.stopUpdatingLocation()
         
     }
