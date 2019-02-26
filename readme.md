@@ -11,10 +11,10 @@ Get the weather forecast through Weather. Check the current temperature, forecas
 ## Installation
 
 1. Download or clone the repo
-2. Navigate to the folder and open xscwvsa.
+2. Navigate to the folder and open WA.xcworkspace.
 3. Run on a device or simulator
 
-## Features
+## Featuresxscwvsa
 
 * See the picture of the state of the weather for today.
 * Swipe on the main screen to see the weather of different cities.
