@@ -19,6 +19,8 @@ Get the weather forecast through Weather. Check the current temperature, forecas
 * See the picture of the state of the weather for today.
 * Swipe on the main screen to see the weather of different cities.
 * Scroll down to get more information about the weather, such as: temp min and max, wind, dawn and dusk, among others.
+* Get the Weather in your actual location
+* Supports landscape and portrait orientatios.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -26,7 +28,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## TODO
 
 1. Get the weather by city
-2. Change the first UIPageControl point to the gps image
+2. Change the first UIPageControl point for the gps image
+3. Manage changes in GPS policy for Weather changes
 
 ## Author
 alfonsomestre, [alfonso.mestre4@gmail.com](mailto:alfonso.mestre4@gmail.com)
