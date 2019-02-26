@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="weathericons-regular-webfont.ttf">
+            <string>WeatherIcons-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="gTV-IL-0wX" customClass="ForecastCollectionViewCell" customModule="WA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="56" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="56" height="114"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="4q0-jF-Lo4">
+                        <rect key="frame" x="1" y="0.0" width="54" height="21.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21.5" id="MNK-3G-ZrA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B42-og-HMI">
+                        <rect key="frame" x="0.0" y="21.5" width="56" height="57.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="-0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="m2T-Gg-7H4">
+                        <rect key="frame" x="1" y="79" width="54" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="829-Kk-csd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="24"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="B42-og-HMI" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="4R1-Ru-Ukm"/>
+                <constraint firstItem="m2T-Gg-7H4" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" constant="-2" id="DNl-wC-JwZ"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="m2T-Gg-7H4" secondAttribute="bottom" id="KgC-qy-0U6"/>
+                <constraint firstItem="B42-og-HMI" firstAttribute="top" secondItem="4q0-jF-Lo4" secondAttribute="bottom" id="OnY-hl-vJg"/>
+                <constraint firstItem="4q0-jF-Lo4" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" constant="-2" id="Pel-gw-Rim"/>
+                <constraint firstItem="m2T-Gg-7H4" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="QL5-Pc-X62"/>
+                <constraint firstItem="m2T-Gg-7H4" firstAttribute="top" secondItem="B42-og-HMI" secondAttribute="bottom" id="V4o-e2-Qnx"/>
+                <constraint firstItem="B42-og-HMI" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="dAC-Fe-DBH"/>
+                <constraint firstItem="4q0-jF-Lo4" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="siS-nm-wqu"/>
+                <constraint firstItem="4q0-jF-Lo4" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="y4v-UZ-9pc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="iconImageView" destination="B42-og-HMI" id="lrq-UF-e8M"/>
+                <outlet property="tempLabelOutlet" destination="m2T-Gg-7H4" id="EFv-x8-hSL"/>
+                <outlet property="timeLabelOutlet" destination="4q0-jF-Lo4" id="z2Q-IN-xWf"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
+        </collectionViewCell>
+    </objects>
+</document>

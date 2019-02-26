@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - Kingfisher (5.1.1)
+  - MarqueeLabel/Swift (3.2.0)
+  - NotificationBannerSwift (2.0.1):
+    - MarqueeLabel/Swift (~> 3.2.0)
+    - SnapKit (~> 4.2.0)
+  - ObjectMapper (3.4.2)
+  - RxAtomic (4.4.1)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+  - SnapKit (4.2.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper (~> 5.0)
+  - Kingfisher
+  - NotificationBannerSwift
+  - ObjectMapper
+  - RxSwift (~> 4.0)
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - Kingfisher
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - ObjectMapper
+    - RxAtomic
+    - RxSwift
+    - SnapKit
+    - SVProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
+  NotificationBannerSwift: 007774aa590cc9680647b92b2f217bef5c00c32c
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 7e0fd8cdb35b56f04151077ccd8414903fe96c9d
+
+COCOAPODS: 1.5.3
