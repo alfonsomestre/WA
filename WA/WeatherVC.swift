@@ -293,6 +293,18 @@ class WeatherVC: UIViewController {
             }
         }
     }
+    
+    func createCurrLocVC(){
+        if let pageVC = self.pageVC{
+            pageVC.addFirstVC()
+        }
+    }
+    
+    func removeCurrLocVC(){
+        if let pageVC = self.pageVC{
+            pageVC.removeFirstVC()
+        }
+    }
 }
 
 // MARK: - PageControlDelegate
@@ -421,11 +433,11 @@ extension WeatherVC : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways:
-            pageVC?.addFirstVC()
+            self.createCurrLocVC()
         case .authorizedWhenInUse:
-            pageVC?.addFirstVC()
+            self.createCurrLocVC()
         case .denied:
-            pageVC?.removeFirstVC()
+            self.removeCurrLocVC()
         default:
             break
         }

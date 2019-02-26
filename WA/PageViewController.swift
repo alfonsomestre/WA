@@ -86,6 +86,7 @@ class PageViewController: UIPageViewController {
     }
     
     func removeFirstVC(){
+        // Remove WeatherVC that has the current location if exists and navigate to ti
         let vcs = orderedViewControllers.filter({
             vc in
             if let vc = vc as? WeatherVC{
@@ -117,6 +118,8 @@ class PageViewController: UIPageViewController {
     }
     
     func addFirstVC(){
+        // Add WeatherVC that has the current location if dont exists and navigate to ti
+        
         let vcs = orderedViewControllers.filter({
             vc in
             if let vc = vc as? WeatherVC{
