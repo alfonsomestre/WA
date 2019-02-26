@@ -29,7 +29,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 1. Get the weather by city
 2. Change the first UIPageControl point for the gps image
-3. Manage changes in GPS policy for Weather changes
 
 ## Author
 alfonsomestre, [alfonso.mestre4@gmail.com](mailto:alfonso.mestre4@gmail.com)

@@ -86,17 +86,62 @@ class PageViewController: UIPageViewController {
     }
     
     func removeFirstVC(){
-        self.orderedViewControllers.remove(at: 0)
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion:  { (finished) -> Void in
-                                // Setting the view controller programmatically does not fire
-                                // any delegate methods, so we have to manually notify the
-                                // 'tutorialDelegate' of the new index.
-                                self.notifyDelegateOfNewIndex()
-            })
+        let vcs = orderedViewControllers.filter({
+            vc in
+            if let vc = vc as? WeatherVC{
+                if vc.cityName == Cities.currentLocation{
+                    return true
+                }
+                return false
+            }
+            return false
+        })
+        if vcs.count >= 1{
+            if let index = orderedViewControllers.firstIndex(of: vcs.first!){
+                self.orderedViewControllers.remove(at: index)
+                if let firstViewController = orderedViewControllers.first {
+                    setViewControllers([firstViewController],
+                                       direction: .reverse,
+                                       animated: true,
+                                       completion:  { (finished) -> Void in
+                                        // Setting the view controller programmatically does not fire
+                                        // any delegate methods, so we have to manually notify the
+                                        // 'tutorialDelegate' of the new index.
+                                        self.notifyDelegateOfNewIndex()
+                    })
+                }
+            }
+            
+        }
+        
+    }
+    
+    func addFirstVC(){
+        let vcs = orderedViewControllers.filter({
+            vc in
+            if let vc = vc as? WeatherVC{
+                if vc.cityName == Cities.currentLocation{
+                    return true
+                }
+                return false
+            }
+            return false
+        })
+        if vcs.count == 0{
+            orderedViewControllers = [self.newCityViewController(cityName: Cities.currentLocation)] + orderedViewControllers
+            
+            if let firstViewController = orderedViewControllers.first {
+                setViewControllers([firstViewController],
+                                   direction: .reverse,
+                                   animated: true,
+                                   completion:  { (finished) -> Void in
+                                    // Setting the view controller programmatically does not fire
+                                    // any delegate methods, so we have to manually notify the
+                                    // 'tutorialDelegate' of the new index.
+                                    self.notifyDelegateOfNewIndex()
+                })
+            }
+            
         }
     }
     

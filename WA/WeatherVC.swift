@@ -67,6 +67,8 @@ class WeatherVC: UIViewController {
         
         self.configCollectionView()
         self.configureTableView()
+        
+        locationManager.delegate = self
        
         
     }
@@ -119,10 +121,9 @@ class WeatherVC: UIViewController {
     func getLocation(){
         // Request location
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            //locationManager.requestLocation()
             locationManager.requestLocation()
-            locationManager.startUpdatingLocation()
         }
     }
     
@@ -392,6 +393,7 @@ extension WeatherVC : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // We dont need to show the alert anymore
         self.showAlert = false
+        if self.cityName == "currentLocation"{
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         //if self.cityName == "currentLocation"{
         // Get weather conditions
@@ -401,7 +403,10 @@ extension WeatherVC : CLLocationManagerDelegate{
         self.lon = locValue.longitude
         //}
         // Dont need to update location anymore
-        self.locationManager.stopUpdatingLocation()
+        //self.locationManager.stopUpdatingLocation()
+        }else{
+            pageVC?.addFirstVC()
+        }
         
     }
     
@@ -411,5 +416,18 @@ extension WeatherVC : CLLocationManagerDelegate{
             self.showConfigAlert()
         }
         self.showAlert = false
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways:
+            pageVC?.addFirstVC()
+        case .authorizedWhenInUse:
+            pageVC?.addFirstVC()
+        case .denied:
+            pageVC?.removeFirstVC()
+        default:
+            break
+        }
     }
 }
