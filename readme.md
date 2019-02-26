@@ -14,7 +14,7 @@ Get the weather forecast through Weather. Check the current temperature, forecas
 2. Navigate to the folder and open WA.xcworkspace.
 3. Run on a device or simulator
 
-## Featuresxscwvsa
+## Features
 
 * See the picture of the state of the weather for today.
 * Swipe on the main screen to see the weather of different cities.
